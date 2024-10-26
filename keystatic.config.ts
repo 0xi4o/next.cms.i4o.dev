@@ -28,7 +28,7 @@ export default config({
 		posts: collection({
 			label: 'Posts',
 			slugField: 'title',
-			path: 'src/content/posts/*',
+			path: 'content/posts/*',
 			entryLayout: 'content',
 			format: { contentField: 'content' },
 			columns: ['draft', 'date_updated', 'date_published'],
@@ -55,7 +55,7 @@ export default config({
 		bookNotes: collection({
 			label: 'Book Notes',
 			slugField: 'title',
-			path: 'src/content/book-notes/*',
+			path: 'content/book-notes/*',
 			entryLayout: 'content',
 			format: { contentField: 'content' },
 			schema: {
@@ -77,7 +77,7 @@ export default config({
 		series: collection({
 			label: 'Series',
 			slugField: 'title',
-			path: 'src/content/series/*',
+			path: 'content/series/*',
 			entryLayout: 'content',
 			format: { contentField: 'excerpt' },
 			schema: {
@@ -108,7 +108,7 @@ export default config({
 		// ------------------------------
 		books: singleton({
 			label: 'Books',
-			path: 'src/content/books',
+			path: 'content/books',
 			format: { data: 'json' },
 			schema: {
 				read: fields.array(
@@ -181,7 +181,7 @@ export default config({
 		kind: 'github',
 		repo: {
 			owner: '0xi4o',
-			name: 'cms.i4o.dev',
+			name: 'next.cms.i4o.dev',
 		},
 	},
 })
