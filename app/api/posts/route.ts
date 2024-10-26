@@ -1,4 +1,4 @@
-// import { createReader } from '@keystatic/core/reader'
+import { createReader } from '@keystatic/core/reader'
 import { createGitHubReader } from '@keystatic/core/reader/github'
 import keystaticConfig from '../../../keystatic.config'
 
@@ -12,17 +12,17 @@ export async function GET(request: Request): Promise<Response> {
 		//         { status: 401 }
 		//     )
 
-		// const headers = request.headers
-		// const originHeader = headers.get('origin') as string
-		// const origin = originHeader ? new URL(originHeader).host : ''
+		const headers = request.headers
+		const originHeader = headers.get('origin') as string
+		const origin = originHeader ? new URL(originHeader).host : ''
 
 		const reader =
-			// origin === '' || origin.startsWith('dev')
-			// 	? createReader(process.cwd(), keystaticConfig)
-			createGitHubReader(keystaticConfig, {
-				repo: '0xi4o/cms.i4o.dev',
-				token: process.env.GITHUB_PAT,
-			})
+			origin === '' || origin.startsWith('dev')
+				? createReader(process.cwd(), keystaticConfig)
+				: createGitHubReader(keystaticConfig, {
+						repo: '0xi4o/cms.i4o.dev',
+						token: process.env.GITHUB_PAT,
+					})
 		if (!reader) {
 			throw new Error('Reader not found')
 		}
