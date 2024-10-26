@@ -1,10 +1,8 @@
-import { createReader } from '@keystatic/core/reader'
+// import { createReader } from '@keystatic/core/reader'
 import { createGitHubReader } from '@keystatic/core/reader/github'
 import keystaticConfig from '../../../keystatic.config'
 
-export async function GET({
-	request,
-}: { request: Request }): Promise<Response> {
+export async function GET(request: Request): Promise<Response> {
 	try {
 		// const isAuthorized = isAuthorizedRequest(req)
 		//
